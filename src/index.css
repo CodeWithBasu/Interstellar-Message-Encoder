@@ -71,8 +71,10 @@
 @utility card-hover {
   transition: all 0.2s ease-in-out;
 }
-@utility card-hover:hover {
-  transform: translateY(-2px);
-  background-color: var(--color-surface-hover);
-  border-color: rgba(255, 255, 255, 0.15);
+@utility card-hover-active {
+  &:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-surface-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
 }
