@@ -31,13 +31,18 @@ function App() {
       
       <main className="w-full max-w-2xl relative z-10 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         
-        <header className="text-center space-y-4">
-           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-primary">
-             Interstellar Encoder
-           </h1>
-           <p className="text-secondary text-sm md:text-base max-w-md mx-auto leading-relaxed">
-             Encode human language into universal cosmic signals.
-           </p>
+        <header className="text-center space-y-6">
+           <div className="flex justify-center">
+              <img src="/morse-logo.png" alt="Interstellar Encoder Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
+           </div>
+           <div className="space-y-2">
+             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-primary">
+               Interstellar Encoder
+             </h1>
+             <p className="text-secondary text-sm md:text-base max-w-md mx-auto leading-relaxed">
+               Encode human language into universal cosmic signals.
+             </p>
+           </div>
         </header>
 
         <div className="space-y-6">
