@@ -1,66 +1,162 @@
-# Interstellar-Message-Encoder
+# 🌌 Interstellar Message Encoder
 
-Interstellar Message Encoder
-Technology Stack: React, TypeScript, Tailwind CSS
+![Interstellar Encoder Banner](public/morse-logo.png)
 
-The Interstellar Message Encoder is a futuristic web-based application designed to convert human messages into universal communication formats suitable for extraterrestrial intelligence. The project is inspired by SETI research, the Voyager Golden Record, and mathematical communication principles.
-1. Project Objective
-The primary objective of this project is to explore how humans might communicate with extraterrestrial intelligence using universal concepts such as mathematics, binary logic, timing patterns, and waveforms instead of spoken language.
-2. Why This Project is Valuable
-- Research-inspired and futuristic
-- Not a typical CRUD application
-- Combines space science, mathematics, and web engineering
-- Demonstrates advanced frontend skills
-- High impact for hackathons, portfolios, and interviews
-3. Technology Stack
-Frontend Framework: React
-Programming Language: TypeScript
-Styling Framework: Tailwind CSS
-Audio Processing: Web Audio API
-Visualization: HTML Canvas / SVG
-Build Tool: Vite
-4. System Architecture
-Human Message → Intent Parsing → Mathematical Encoding → Binary Encoding → Signal Framing → Morse Code Encoding → Audio Signal Generation → Waveform Visualization
-5. Core Modules
-5.1 Message Input Module
-Provides a terminal-style input interface where users enter messages intended for interstellar transmission. The input is normalized and forwarded to the processing pipeline.
-5.2 Intent & Semantic Layer
-This layer identifies the intent of the message such as greeting, identity, or origin. It maps human language concepts to universal representations.
-5.3 Mathematical Encoding Module
-Messages are converted into mathematical representations using Fibonacci sequences, prime numbers, and planetary indexing. These patterns indicate intelligence and origin.
-5.4 Binary Encoding Module
-Mathematical values are converted into fixed-length binary format. Start and end markers are added to define message boundaries clearly.
-5.5 Morse Code Encoder
-Text messages are translated into Morse code using dots and dashes. Morse code is inherently binary and time-based, making it suitable for interstellar signaling.
-5.6 Morse Code Audio Generator
-The Morse code output is converted into audio pulses using the Web Audio API. Short tones represent dots, long tones represent dashes, and silence encodes gaps.
-5.7 Waveform Visualization Module
-Binary and Morse signals are visualized using waveform graphs. High pulses represent binary 1, and low pulses represent binary 0.
-6. Futuristic UI Design
-The user interface follows a space-console theme inspired by NASA and SETI systems. Tailwind CSS is used to create glassmorphism cards, neon highlights, and dark-space gradients. The UI improves clarity while maintaining a futuristic aesthetic.
-7. Folder Structure
+> **"Encode human language into universal cosmic signals."**
+
+The **Interstellar Message Encoder** is a futuristic, research-inspired web application designed to convert human messages into universal communication formats suitable for extraterrestrial intelligence (ETI). Drawing inspiration from the Voyager Golden Record, SETI research, and mathematical elegance, this project bridges the gap between language, physics, and code.
+
+---
+
+## 🚀 About The Project
+
+Communication with an alien civilization requires a language that transcends culture and biology. This project assumes that **mathematics and physics** are the only true universal languages.
+
+The application allows users to input text messages and visualizes them as:
+
+1.  **Binary Streams**: The fundamental language of computing and logic.
+2.  **Morse Code**: A time-based rhythmic communication protocol.
+3.  **Waveforms**: Visual representation of signal frequency and amplitude.
+4.  **Audio Pulses**: Auditory transmission using basic sine waves.
+
+It features a high-fidelity **Sci-Fi UI** with glassmorphism, neon aesthetics, and CRT-style flickering effects to simulate a deep-space transmission console.
+
+---
+
+## 🎯 Purpose and Motivation
+
+- **Scientific Exploration**: To demonstrate how complex information can be broken down into simple, universal pulses.
+- **Educational Tool**: To help users visualize concepts like binary encoding, signal processing, and data visualization.
+- **Frontend Mastery**: A showcase of advanced React patterns, custom hooks, Canvas API animations, and Web Audio API integration without relying on heavy external libraries.
+
+---
+
+## ✨ Key Features
+
+- **⌨️ Terminal-Style Input**: A responsive text input field that parses messages in real-time.
+- **🔢 Multi-Layer Encoding**:
+  - **Binary**: Converts text to 8-bit binary strings (ASCII/UTF-8).
+  - **Morse**: Standard International Morse Code translation.
+- **🌊 Dynamic Waveform Visualization**: Real-time rendering of signal pulses using HTML5 Canvas for a smooth, organic oscilloscope effect.
+- **🔊 Audio Transmission**: Playback functionality that uses the **Web Audio API** to generate accurate sine-wave beeps for dots and dashes.
+- **🎨 Immersive UI/UX**:
+  - **Flickering Grid Background**: A custom-built canvas animation that creates a "Matrix" or "Radar" aesthetic.
+  - **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices (masking adjusts dynamically).
+  - **Interactive Elements**: Hover effects, glass panels, and glow animations.
+
+---
+
+## 🛠️ Technology Stack
+
+This project is built using a modern, type-safe, and performance-oriented stack:
+
+- **Frontend Framework**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (Strict Mode enabled)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (Alpha/Beta features utilized for optimization)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **APIs**:
+  - **Web Audio API** (for signal generation)
+  - **Canvas API** (for grid and waveform rendering)
+  - **Clipboard API** (for copying features)
+
+---
+
+## 📐 Data Workflow & How It Works
+
+1.  **Input Parsing**: The user enters a string (e.g., "Hello Mars").
+2.  **Normalization**: Text is sanitized (trimmed, upper-cased) to ensure standardization.
+3.  **Encoding Engine** (`src/hooks/useEncoder.ts`):
+    - **Text → Binary**: Each character is converted to its ASCII decimal value, then to an 8-bit binary representation.
+    - **Text → Morse**: Sentences are mapped to Morse sequences (dots `.` and dashes `-`).
+    - **Morse → Pulse**: Morse strings are parsed into numeric data for the waveform visualizer (High for signal, Low for silence).
+4.  **Rendering**:
+    - Binary and Morse strings are displayed in the UI.
+    - The waveform component reads the pulse data and draws curves on the HTML Canvas.
+5.  **Audio Output**: The `PlayMorse` component triggers the Oscillator nodes to produce sound based on the timeline.
+
+---
+
+## 📂 Project Structure
+
+The project follows a clean, modular architecture:
+
+```
 src/
- ├── components/
- │   ├── MessageInput.tsx
- │   ├── BinaryOutput.tsx
- │   ├── MorseOutput.tsx
- │   ├── Waveform.tsx
- │   └── PlayMorse.tsx
- ├── utils/
- │   ├── intentParser.ts
- │   ├── mathEncoder.ts
- │   ├── binaryEncoder.ts
- │   ├── morseEncoder.ts
- │   └── audioGenerator.ts
- ├── App.tsx
- └── main.tsx
-8. GitHub README Summary
-The GitHub README explains the scientific motivation, system architecture, technology stack, and future scope of the project. It is written in a professional and research-oriented style suitable for recruiters and judges.
-9. Future Enhancements
-- Alien response decoder
-- Space noise and interference simulation
-- FFT frequency analysis
-- AI-based intent detection
-- Radio transmission delay modeling
-10. Conclusion
-The Interstellar Message Encoder demonstrates how universal principles such as mathematics, binary logic, and physics can be used to bridge communication gaps between intelligent civilizations. The project showcases innovation, creativity, and advanced frontend development skills.
+ ├── 📁 components/           # UI Components
+ │   ├── 📁 encoder/          # logic-heavy components (Waveform, Inputs)
+ │   │   ├── BinaryOutput.tsx
+ │   │   ├── MessageInput.tsx
+ │   │   ├── MorseOutput.tsx
+ │   │   ├── PlayMorse.tsx
+ │   │   └── Waveform.tsx
+ │   └── 📁 ui/               # Reusable presentational components
+ │       ├── flickering-grid.tsx
+ │       └── shimmer-button.tsx
+ ├── 📁 hooks/                # Custom React Hooks
+ │   ├── useEncoder.ts        # Central logic for message conversion
+ │   └── useIsMobile.ts       # Responsive layout detection
+ ├── 📁 lib/                  # Utility libraries (clsx, tailwind-merge)
+ ├── 📁 utils/                # Pure helper functions
+ │   ├── audioGenerator.ts    # Web Audio API logic
+ │   ├── binaryEncoder.ts     # Binary conversion algorithms
+ │   └── morseEncoder.ts      # Dictionary and parsing logic
+ ├── App.tsx                  # Main Layout & Orchestration
+ └── main.tsx                 # Entry Point
+```
+
+---
+
+## ⚡ Installation & Usage
+
+Follow these steps to run the project locally:
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Steps
+
+1.  **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/CodeWithBasu/Interstellar-Message-Encoder.git
+    cd Interstellar-Message-Encoder
+    ```
+
+2.  **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open in browser**:
+    Navigate to `http://localhost:5173` to see the app in action.
+
+---
+
+## 🤝 Acknowledgements
+
+- **NASA & The Voyager Program**: For inspiring humanity to think beyond our skies.
+- **SETI Institute**: For the continuous search for extraterrestrial intelligence.
+- **Open Source Community**: For the tools and libraries that made this possible.
+
+---
+
+## 📬 Contact
+
+Created with ❤️ by **Basudev Moharana**.
+
+- **GitHub**: [CodeWithBasu](https://github.com/CodeWithBasu)
+- **LinkedIn**: [Basudev Moharana](https://www.linkedin.com/in/basudev-moharana)
+- **Instagram**: [@wandersoul**\_\_\_\_**](https://www.instagram.com/wandersoul________?igsh=MTR2dDJua2NpeHI5Yw==)
+
+---
+
+_© 2026 Basudev. System v3.1 • Signal Ready._
